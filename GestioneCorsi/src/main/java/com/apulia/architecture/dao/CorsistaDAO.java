@@ -12,7 +12,7 @@ import javax.sql.rowset.RowSetProvider;
 import com.apulia.businesscomponent.model.Corsista;
 
 public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
-	
+
 	private CachedRowSet rowSet;
 
 	private CorsistaDAO() throws DAOException {
@@ -27,6 +27,7 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 		return new CorsistaDAO();
 	}
 
+	@Override
 	public void create(Connection conn, Corsista entity) throws DAOException {
 		try {
 			rowSet.setCommand(SELECT_CORSISTA);
@@ -44,7 +45,7 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 		}
 	}
 
-	
+	@Override
 	public void update(Connection conn, Corsista entity) throws DAOException {
 		PreparedStatement ps;
 		try {
@@ -60,6 +61,7 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 		}
 	}
 
+	@Override
 	public void delete(Connection conn, long codCorsista) throws DAOException {
 		PreparedStatement ps;
 		try {
@@ -71,7 +73,8 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 			throw new DAOException(sql);
 		}
 	}
-	
+
+	@Override
 	public Corsista getByCod(Connection conn, long codCorsista) throws DAOException {
 		Corsista corsista = null;
 		PreparedStatement ps;
@@ -115,8 +118,5 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 		}
 		return corsisti;
 	}
-
-
-
 
 }

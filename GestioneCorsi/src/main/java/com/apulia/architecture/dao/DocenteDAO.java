@@ -25,7 +25,7 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 	public static DocenteDAO getFactory() throws DAOException {
 		return new DocenteDAO();
 	}
-
+	@Override
 	public void create(Connection conn, Docente entity) throws DAOException {
 		try {
 			rowSet.setCommand(SELECT_DOCENTE);
@@ -43,7 +43,7 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 		}
 	}
 
-	
+	@Override
 	public void update(Connection conn, Docente entity) throws DAOException {
 		PreparedStatement ps;
 		try {
@@ -58,7 +58,7 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 			throw new DAOException(sql);
 		}
 	}
-
+	@Override
 	public void delete(Connection conn, long codDocente) throws DAOException {
 		PreparedStatement ps;
 		try {
@@ -70,7 +70,7 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 			throw new DAOException(sql);
 		}
 	}
-	
+	@Override
 	public Docente getByCod(Connection conn, long codDocente) throws DAOException {
 		Docente docente = null;
 		PreparedStatement ps;
@@ -90,7 +90,7 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 		}
 		return docente;
 	}
-
+	@Override
 	public Docente[] getAll(Connection conn) throws DAOException {
 		Docente[] docenti = null;
 		try {
