@@ -9,10 +9,9 @@ import java.sql.Statement;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import com.apulia.businesscomponent.model.Corsista;
 import com.apulia.businesscomponent.model.Docente;
 
-public class DocenteDAO implements DAOConstants {
+public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 	private CachedRowSet rowSet;
 
 	private DocenteDAO() throws DAOException {

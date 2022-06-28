@@ -9,10 +9,9 @@ import java.sql.Statement;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import com.apulia.businesscomponent.model.Corsista;
 import com.apulia.businesscomponent.model.Corso;
 
-public class CorsoDAO implements DAOConstants {
+public class CorsoDAO implements DAOConstants, GenericDAO<Corso> {
 		
 		private CachedRowSet rowSet;
 
@@ -107,7 +106,7 @@ public class CorsoDAO implements DAOConstants {
 
 		@Override
 		public Corso[] getAll(Connection conn) throws DAOException {
-			Cors0[] corsi = null;
+			Corso[] corsi = null;
 			try {
 				Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 				ResultSet rs = stmt.executeQuery(SELECT_CORSO);

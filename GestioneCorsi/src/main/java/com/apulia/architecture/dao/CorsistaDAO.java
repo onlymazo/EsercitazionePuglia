@@ -11,7 +11,7 @@ import javax.sql.rowset.RowSetProvider;
 
 import com.apulia.businesscomponent.model.Corsista;
 
-public class CorsistaDAO implements DAOConstants {
+public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 	
 	private CachedRowSet rowSet;
 
@@ -115,4 +115,8 @@ public class CorsistaDAO implements DAOConstants {
 		}
 		return corsisti;
 	}
+
+
+
+
 }
