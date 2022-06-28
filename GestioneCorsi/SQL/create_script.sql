@@ -27,7 +27,7 @@ nome_docente varchar2(30) not null,
 cognome_docente varchar2(30) not null,
 cv_docente varchar2(50) not null,
 constraint p_coddocente primary key (cod_docente)
-)
+);
 
 create table corsista(
 cod_corsista int,
@@ -35,12 +35,12 @@ nome_corsista varchar2(30) not null,
 cognome_corsista varchar2(30) not null,
 precedenti_formativi number(1) not null,
 constraint p_codcorsista primary key (cod_corsista)
-)
+);
 
 create table corso_corsista(
 cod_corso int,
 cod_corsista int,
 constraint f_codcorso foreign key (cod_corso) references corso(cod_corso),
 constraint f_codcorsista foreign key (cod_corsista) references corsista(cod_corsista)
-)
+);
 
