@@ -29,6 +29,8 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 
 	@Override
 	public void create(Connection conn, Corsista entity) throws DAOException {
+		int bool;
+		
 		try {
 			rowSet.setCommand(SELECT_CORSISTA);
 			rowSet.execute(conn);
@@ -36,7 +38,8 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 			rowSet.updateLong(1, entity.getCodCorsista());
 			rowSet.updateString(2, entity.getNome());
 			rowSet.updateString(3, entity.getCognome());
-			rowSet.updateBoolean(4, entity.isPrecFormativi());
+			bool = entity.isPrecFormativi() ? 1 : 0; //true = 1, false = 0
+			rowSet.updateInt(4, bool);
 			rowSet.insertRow();
 			rowSet.moveToCurrentRow();
 			rowSet.acceptChanges();
@@ -48,12 +51,15 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 	@Override
 	public void update(Connection conn, Corsista entity) throws DAOException {
 		PreparedStatement ps;
+		int bool;
+		
 		try {
 			ps = conn.prepareStatement(UPDATE_CORSISTA);
 			ps.setLong(1, entity.getCodCorsista());
 			ps.setString(2, entity.getNome());
 			ps.setString(3, entity.getCognome());
-			ps.setBoolean(4, entity.isPrecFormativi());
+			bool = entity.isPrecFormativi() ? 1 : 0; //true = 1, false = 0
+			ps.setInt(4, bool);
 			ps.execute();
 			conn.commit();
 		} catch (SQLException sql) {
@@ -77,6 +83,8 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 	@Override
 	public Corsista getByCod(Connection conn, long codCorsista) throws DAOException {
 		Corsista corsista = null;
+		boolean bool;
+		
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(SELECT_CORSISTA_BYCOD);
@@ -87,7 +95,8 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 				corsista.setCodCorsista(rs.getLong(1));
 				corsista.setNome(rs.getString(2));
 				corsista.setCognome(rs.getString(3));
-				corsista.setPrecFormativi(rs.getBoolean(4));
+				bool = (rs.getInt(4)==1); //true = 1, false = 0
+				corsista.setPrecFormativi(bool);
 			}
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
@@ -98,6 +107,8 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 	@Override
 	public Corsista[] getAll(Connection conn) throws DAOException {
 		Corsista[] corsisti = null;
+		boolean bool;
+		
 		try {
 			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs = stmt.executeQuery(SELECT_CORSISTA);
@@ -109,7 +120,8 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 				c.setCodCorsista(rs.getLong(1));
 				c.setNome(rs.getString(2));
 				c.setCognome(rs.getString(3));
-				c.setPrecFormativi(rs.getBoolean(4));
+				bool = (rs.getInt(4)==1); //true = 1, false = 0
+				c.setPrecFormativi(bool);
 				corsisti[i] = c;
 			}
 			rs.close();
