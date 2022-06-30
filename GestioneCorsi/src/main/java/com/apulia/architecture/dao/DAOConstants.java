@@ -9,11 +9,11 @@ public interface DAOConstants {
 	
 	String UPDATE_CORSO = "Update corso set cod_docente = ?, nome_corso = ?, data_inizio = ?, data_fine = ?, costo_corso = ?, commenti = ?, aula_corso = ? where cod_corso = ?";
 	String UPDATE_CORSISTA = "Update corsista set nome_corsista = ?, cognome_corsista = ?, precedenti_formativi = ? where cod_corsista = ?";
-	String UPDATE_DOCENTE = " ";
+	String UPDATE_DOCENTE = " Update docente set nome_docente = ?, cognome_docente = ?, cv = ? where cod_docente = ?";
 	
 	String DELETE_CORSO = "Delete from corso where cod_corso = ?";
 	String DELETE_CORSISTA = "Delete from corsista where cod_corsista = ?";
-	String DELETE_DOCENTE = " ";
+	String DELETE_DOCENTE = "Delete from docente where cod_docente = ?";
 	
 	String SELECT_CORSO_BYCOD = "Select * from corso where cod_corso = ?";
 	String SELECT_CORSISTA_BYCOD = "Select * from corsista where cod_corsista = ?";

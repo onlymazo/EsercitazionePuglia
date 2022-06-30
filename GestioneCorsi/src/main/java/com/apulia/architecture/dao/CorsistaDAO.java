@@ -68,11 +68,11 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 	}
 
 	@Override
-	public void delete(Connection conn, long codCorsista) throws DAOException {
+	public void delete(Connection conn, long cod) throws DAOException {
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(DELETE_CORSISTA);
-			ps.setLong(1, codCorsista);
+			ps.setLong(1, cod);
 			ps.execute();
 			conn.commit();
 		} catch (SQLException sql) {
@@ -81,14 +81,14 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 	}
 
 	@Override
-	public Corsista getByCod(Connection conn, long codCorsista) throws DAOException {
+	public Corsista getByCod(Connection conn, long cod) throws DAOException {
 		Corsista corsista = null;
 		boolean bool;
 		
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(SELECT_CORSISTA_BYCOD);
-			ps.setLong(1, codCorsista);
+			ps.setLong(1, cod);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				corsista = new Corsista();

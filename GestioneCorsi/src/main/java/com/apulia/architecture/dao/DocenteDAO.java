@@ -25,6 +25,7 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 	public static DocenteDAO getFactory() throws DAOException {
 		return new DocenteDAO();
 	}
+	
 	@Override
 	public void create(Connection conn, Docente entity) throws DAOException {
 		try {
@@ -48,35 +49,37 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(UPDATE_DOCENTE);
-			ps.setLong(1, entity.getCodDocente());
-			ps.setString(2, entity.getNome());
-			ps.setString(3, entity.getCognome());
-			ps.setString(4, entity.getCv());
+			ps.setString(1, entity.getNome());
+			ps.setString(2, entity.getCognome());
+			ps.setString(3, entity.getCv());
+			ps.setLong(4, entity.getCodDocente());
 			ps.execute();
 			conn.commit();
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
 	}
+	
 	@Override
-	public void delete(Connection conn, long codDocente) throws DAOException {
+	public void delete(Connection conn, long cod) throws DAOException {
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(DELETE_DOCENTE);
-			ps.setLong(1, codDocente);
+			ps.setLong(1, cod);
 			ps.execute();
 			conn.commit();
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
 	}
+	
 	@Override
-	public Docente getByCod(Connection conn, long codDocente) throws DAOException {
+	public Docente getByCod(Connection conn, long cod) throws DAOException {
 		Docente docente = null;
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(SELECT_DOCENTE_BYCOD);
-			ps.setLong(1, codDocente);
+			ps.setLong(1, cod);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				docente = new Docente();
@@ -90,6 +93,7 @@ public class DocenteDAO implements DAOConstants, GenericDAO<Docente> {
 		}
 		return docente;
 	}
+	
 	@Override
 	public Docente[] getAll(Connection conn) throws DAOException {
 		Docente[] docenti = null;

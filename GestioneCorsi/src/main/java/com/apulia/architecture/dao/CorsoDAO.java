@@ -53,14 +53,14 @@ public class CorsoDAO implements DAOConstants, GenericDAO<Corso> {
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(UPDATE_CORSO);
-			ps.setLong(1, entity.getCodCorso());
-			ps.setLong(2, entity.getCodDocente());
-			ps.setString(3, entity.getNome());
-			ps.setDate(4, new java.sql.Date(entity.getDataInizio().getTime()));
-			ps.setDate(5, new java.sql.Date(entity.getDataFine().getTime()));
-			ps.setDouble(6, entity.getCosto());
-			ps.setString(7, entity.getCommenti());
-			ps.setInt(8, entity.getAula());
+			ps.setLong(1, entity.getCodDocente());
+			ps.setString(2, entity.getNome());
+			ps.setDate(3, new java.sql.Date(entity.getDataInizio().getTime()));
+			ps.setDate(4, new java.sql.Date(entity.getDataFine().getTime()));
+			ps.setDouble(5, entity.getCosto());
+			ps.setString(6, entity.getCommenti());
+			ps.setInt(7, entity.getAula());
+			ps.setLong(8, entity.getCodCorso());
 			ps.execute();
 			conn.commit();
 		} catch (SQLException sql) {
@@ -68,11 +68,11 @@ public class CorsoDAO implements DAOConstants, GenericDAO<Corso> {
 		}
 	}
 	@Override
-	public void delete(Connection conn, long codCorso) throws DAOException {
+	public void delete(Connection conn, long cod) throws DAOException {
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(DELETE_CORSO);
-			ps.setLong(1, codCorso);
+			ps.setLong(1, cod);
 			ps.execute();
 			conn.commit();
 		} catch (SQLException sql) {
@@ -80,12 +80,12 @@ public class CorsoDAO implements DAOConstants, GenericDAO<Corso> {
 		}
 	}
 	@Override
-	public Corso getByCod(Connection conn, long codCorso) throws DAOException {
+	public Corso getByCod(Connection conn, long cod) throws DAOException {
 		Corso corso = null;
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(SELECT_CORSO_BYCOD);
-			ps.setLong(1, codCorso);
+			ps.setLong(1, cod);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				corso = new Corso();
