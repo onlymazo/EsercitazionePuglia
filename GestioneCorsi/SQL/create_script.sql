@@ -31,8 +31,8 @@ constraint f_coddocente foreign key (cod_docente) references docente(cod_docente
 create table corso_corsista(
 cod_corso int,
 cod_corsista int,
-constraint f_codcorso foreign key (cod_corso) references corso(cod_corso),
-constraint f_codcorsista foreign key (cod_corsista) references corsista(cod_corsista)
+constraint f_codcorso foreign key (cod_corso) references corso(cod_corso) on delete cascade,
+constraint f_codcorsista foreign key (cod_corsista) references corsista(cod_corsista) on delete cascade
 );
 
 ----sequenze per corso, corsista, docente

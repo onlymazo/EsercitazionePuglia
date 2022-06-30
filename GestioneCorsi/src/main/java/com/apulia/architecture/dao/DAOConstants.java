@@ -20,6 +20,7 @@ public interface DAOConstants {
 	String SELECT_DOCENTE_BYCOD = "Select * from docente where cod_docente = ?";
 	
 	//-----SEQUENZE
+	String SELECT_DOCENTESEQ = "Select docente_seq from dual";
 	String SELECT_CORSOSEQ = "Select corso_seq.nextval from dual";
 	String SELECT_CORSISTASEQ = "Select corsista_seq.nextval from dual";
 	

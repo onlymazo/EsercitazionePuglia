@@ -6,23 +6,31 @@ import java.sql.SQLException;
 
 import com.apulia.architecture.dao.DAOException;
 import com.apulia.architecture.dao.DocenteDAO;
+import com.apulia.architecture.dao.adapter.GenericBCAdapter;
 import com.apulia.architecture.dbaccess.DBAccess;
+import com.apulia.businesscomponent.codgenerator.DocenteCodGenerator;
 import com.apulia.businesscomponent.model.Docente;
 
-public class DocenteBC implements GenericBC<Docente> {
+public class DocenteBC extends GenericBCAdapter<Docente> {
 	private Connection conn;
 	
 	public DocenteBC() throws ClassNotFoundException, DAOException, IOException {
 		conn = DBAccess.getConnection();
 	}
 	
-	//TODO creare classe DocenteCodGenerator e completare create con getNextCod.
-	@Override
 	public void create(Docente entity) throws DAOException {
 		try {
-			DocenteDAO.getFactory().create(conn, entity);
+			if(entity.getCodDocente() == 0) {
+				entity.setCodDocente(DocenteCodGenerator.getInstance().getNextCod());
+				DocenteDAO.getFactory().create(conn, entity);
+			} else {
+				DocenteDAO.getFactory().create(conn, entity);
+			}
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
+		} catch (ClassNotFoundException | IOException exc) {
+			System.err.println(exc.getMessage());
+			exc.printStackTrace();
 		}
 	}
 
