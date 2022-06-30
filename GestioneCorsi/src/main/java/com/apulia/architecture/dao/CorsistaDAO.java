@@ -38,7 +38,7 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 			rowSet.updateLong(1, entity.getCodCorsista());
 			rowSet.updateString(2, entity.getNome());
 			rowSet.updateString(3, entity.getCognome());
-			bool = entity.isPrecFormativi() ? 1 : 0; //true = 1, false = 0
+			bool = entity.isPrecFormativi() ? 1 : 0; 
 			rowSet.updateInt(4, bool);
 			rowSet.insertRow();
 			rowSet.moveToCurrentRow();
@@ -55,11 +55,11 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 		
 		try {
 			ps = conn.prepareStatement(UPDATE_CORSISTA);
-			ps.setLong(1, entity.getCodCorsista());
-			ps.setString(2, entity.getNome());
-			ps.setString(3, entity.getCognome());
-			bool = entity.isPrecFormativi() ? 1 : 0; //true = 1, false = 0
-			ps.setInt(4, bool);
+			ps.setString(1, entity.getNome());
+			ps.setString(2, entity.getCognome());
+			bool = entity.isPrecFormativi() ? 1 : 0;
+			ps.setInt(3, bool);
+			ps.setLong(4, entity.getCodCorsista());
 			ps.execute();
 			conn.commit();
 		} catch (SQLException sql) {
@@ -95,7 +95,7 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 				corsista.setCodCorsista(rs.getLong(1));
 				corsista.setNome(rs.getString(2));
 				corsista.setCognome(rs.getString(3));
-				bool = (rs.getInt(4)==1); //true = 1, false = 0
+				bool = (rs.getInt(4)==1); 
 				corsista.setPrecFormativi(bool);
 			}
 		} catch (SQLException sql) {
@@ -120,7 +120,7 @@ public class CorsistaDAO implements DAOConstants, GenericDAO<Corsista> {
 				c.setCodCorsista(rs.getLong(1));
 				c.setNome(rs.getString(2));
 				c.setCognome(rs.getString(3));
-				bool = (rs.getInt(4)==1); //true = 1, false = 0
+				bool = (rs.getInt(4)==1); 
 				c.setPrecFormativi(bool);
 				corsisti[i] = c;
 			}
