@@ -27,7 +27,7 @@ public class CorsoCorsistaDAO extends GenericDAOAdapter<CorsoCorsista> implement
 	@Override
 	public void create(Connection conn, CorsoCorsista entity) throws DAOException {
 		try {
-			rowSet.setCommand(SELECT_DOCENTE);
+			rowSet.setCommand(SELECT_CORSO_CORSISTA);
 			rowSet.execute(conn);
 			rowSet.moveToInsertRow();
 			rowSet.updateLong(1, entity.getCodCorso());
