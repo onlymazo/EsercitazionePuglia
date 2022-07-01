@@ -4,7 +4,6 @@ drop table corsista cascade constraints;
 drop table corso_corsista cascade constraints;
 drop table admin cascade constraints;
 
---sequenze per corso, corsista, docente
 drop sequence corso_seq;
 drop sequence corsista_seq;
 drop sequence docente_seq;
