@@ -13,7 +13,17 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-<h1>TESTO PLACEHOLDER</h1>
+<div class="container">
+
+<div class="menu-bottoni">
+<button type="button" class="btn btn-outline-secondary">Inserisci nuovo corsista</button>
+<button type="button" class="btn btn-outline-secondary">Visualizza statistiche</button>
+<button type="button" class="btn btn-outline-secondary">Elimina corsi</button>
+</div>
+
+
+
+</div>
 
 
 <footer class="footer"><%@include file="footer.html" %></footer>

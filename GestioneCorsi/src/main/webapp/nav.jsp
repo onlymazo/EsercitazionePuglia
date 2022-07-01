@@ -1,34 +1,27 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" 
-      class="navbar-toggle" 
-      data-toggle="collapse" 
-      data-target="#menuApp">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="home.jsp">Negozio on-line</a>
+      <a class="navbar-brand brand" href="gestione.jsp">Fattapposta</a>
     </div>
-    <div class="collapse navbar-collapse" id="menuApp">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-        	<a href="registra.jsp">
-        	<span class="glyphicon glyphicon-user"></span>Sign up
-        	</a>
+    <%
+    	String login = (String) session.getAttribute("cod_admin");
+    	String username = (String) session.getAttribute("nome_admin");
+    
+    	if(login != null) {    
+    %>
+      <ul >
+        <li class="form-inline my-2 my-lg-0">
+        	Benvenuto, <%= username %>
+        	
         </li>
-        <li><a href="login.jsp">
-        	<span class="glyphicon glyphicon-log-in"></span>Login
-        	</a>
-        </li>
-        
-                <li><a href="logout.jsp">
-        	<span class="glyphicon glyphicon-off"></span>Logout
+        <li class="form-inline my-2 my-lg-0"><a href="logout.jsp">
+        	Logout
         	</a>
         </li>
       </ul>
-     
-     </div>
-     </div>
+    <%
+    	}
+    %>
+
+    </div>
 </nav>

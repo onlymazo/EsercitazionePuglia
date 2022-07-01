@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col">&nbsp;</div>
 			<div class="col">
-					<h3>Oh mio dio, un errore! AAAAAAAHHHHH!</h3>
+					<h3>Oh no, un errore! AAAAAAAHHHHH!</h3>
 				<div class="errore-pan">
 					<h5>Eccezione durante la connessione al DB</h5>
 
@@ -43,7 +43,7 @@
 		<div class="row">
 			<div class="col">&nbsp;</div>
 			<div class="col">
-					<h3>Oh mio dio, un errore! AAAAAAAHHHHH!</h3>
+					<h3>Oh no, un errore! AAAAAAAHHHHH!</h3>
 				<div class="errore-pan">
 				<h5>Eccezione DAO</h5>
 				<h5 <%=exception.getClass().getName()%>></h5>
@@ -63,7 +63,7 @@
 		<div class="row">
 			<div class="col">&nbsp;</div>
 			<div class="col">
-					<h3>Oh mio dio, un errore! AAAAAAAHHHHH!</h3>
+					<h3>Oh no, un errore! AAAAAAAHHHHH!</h3>
 			<div class="errore-pan">
 
 				<h5>Eccezione non prevista</h5>

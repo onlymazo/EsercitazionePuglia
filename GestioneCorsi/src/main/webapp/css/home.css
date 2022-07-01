@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	margin-bottom: 320px;
+	margin-bottom: 420px;
 	background-color: #e8e4d8;	
 }
 
@@ -12,46 +12,23 @@ body {
 	display: none;
 }
 
-.navbar-inverse {
-	background-color:#5bb7a8;	
+/*LINK*/
+
+a {
+	color: #6c757d;
 }
 
-footer {
-	position: absolute;
-	bottom: 0;
-	height: 300px;
-	width: 100%;
-	background-color: #5bb7a8;
-	color: #f1d4b6;
+a:hover {
+	color: #343a40;
+	text-decoration: underline overline;
 }
 
-@media screen and (max-width: 740px) {
-	footer {
-		height: 480px;
-	}
-	
-	body {
-	margin-bottom: 500px;
-	}
-}
 
-footer nav {
-	float: left;
-	padding: 30px;
-}
+/*GESTIONE*/
 
-footer section {
-	float: left;
-	padding: 30px;
+.menu-bottoni {
+	padding-top: 30px;
 }
-
-p.copyright {
-	clear: both;
-	margin-left: 30px;
-	margin-bottom:30px;
-	
-}
-
 
 /* ACCESSO NEGATO */
 
@@ -84,3 +61,46 @@ p.copyright {
 	overflow-y: auto;
 	overflow-x: hidden;
 }
+
+/* NAVBAR */
+
+a.brand {
+	font-family: 'Montez', cursive;
+	color: #614336;
+	font-size: 2rem;
+}
+
+.navbar-inverse {
+	background-color:#c6b3ab;	
+}
+
+
+/* FOOTER */
+
+
+footer {
+	position: absolute;
+	bottom: 0;
+	height: 220px;
+	width: 100%;
+	background-color: #c6b3ab;
+	color: #614336;
+}
+
+footer nav {
+	float: left;
+	padding: 30px;
+}
+
+footer section {
+	float: left;
+	padding: 30px;
+}
+
+p.copyright {
+ 	float: right;
+	margin-right: 100px;
+	padding: 30px;
+	
+}
+
