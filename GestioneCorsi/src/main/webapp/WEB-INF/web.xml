@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="4.0">
 	<display-name>GestioneCorsi</display-name>
 	<welcome-file-list>
-		<welcome-file>admin.jsp</welcome-file>
+		<welcome-file>home.jsp</welcome-file>
 	</welcome-file-list>
 	<error-page>
 		<exception-type>java.lang.Throwable</exception-type>
@@ -15,5 +15,22 @@
 		<error-code>404</error-code>
 		<location>/error404.jsp</location>
 	</error-page>
+	
+	  <security-constraint>
+  	<web-resource-collection>
+  		<web-resource-name>Area privata</web-resource-name>
+  		<url-pattern>/*</url-pattern>
+  		<http-method>POST</http-method>
+  		<http-method>GET</http-method>
+  	</web-resource-collection>
+  	<auth-constraint>
+  		<role-name>manager-gui</role-name>
+  	</auth-constraint>
+  </security-constraint>
+  
+  <login-config>
+  	<auth-method>BASIC</auth-method>
+  	<realm-name>Controllo</realm-name>
+  </login-config>
 
 </web-app>
