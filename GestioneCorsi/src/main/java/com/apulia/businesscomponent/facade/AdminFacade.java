@@ -3,10 +3,12 @@ package com.apulia.businesscomponent.facade;
 import java.io.IOException;
 
 import com.apulia.architecture.dao.DAOException;
+import com.apulia.businesscomponent.AdminBC;
 import com.apulia.businesscomponent.CorsistaBC;
 import com.apulia.businesscomponent.CorsoBC;
 import com.apulia.businesscomponent.CorsoCorsistaBC;
 import com.apulia.businesscomponent.DocenteBC;
+import com.apulia.businesscomponent.model.Admin;
 import com.apulia.businesscomponent.model.Corsista;
 import com.apulia.businesscomponent.model.Corso;
 import com.apulia.businesscomponent.model.CorsoCorsista;
@@ -14,6 +16,7 @@ import com.apulia.businesscomponent.model.Docente;
 
 public class AdminFacade {
 	private static AdminFacade aF;
+	private AdminBC aBC;
 	private DocenteBC dBC;
 	private CorsistaBC crBC;
 	private CorsoBC cBC;
@@ -124,5 +127,11 @@ public class AdminFacade {
 			throws ClassNotFoundException, DAOException, IOException {
 		ccBC = new CorsoCorsistaBC();
 		ccBC.create(cc);
+	}
+	
+	public Admin getAdminByCod(long cod)
+			throws ClassNotFoundException, DAOException, IOException {
+		aBC = new AdminBC();
+		return aBC.getByCod(cod);
 	}
 }
