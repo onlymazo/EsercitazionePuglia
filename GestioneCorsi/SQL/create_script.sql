@@ -25,7 +25,7 @@ costo_corso number(6,2) not null,
 commenti varchar2(100),
 aula_corso int not null,
 constraint p_codcorso primary key (cod_corso),
-constraint f_coddocente foreign key (cod_docente) references docente(cod_docente),
+constraint f_coddocente foreign key (cod_docente) references docente(cod_docente)
 );
 
 create table corso_corsista(
