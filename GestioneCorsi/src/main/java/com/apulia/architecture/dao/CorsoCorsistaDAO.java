@@ -29,12 +29,20 @@ public class CorsoCorsistaDAO extends GenericDAOAdapter<CorsoCorsista> implement
 		try {
 			rowSet.setCommand(SELECT_CORSO_CORSISTA);
 			rowSet.execute(conn);
-			rowSet.moveToInsertRow();
-			rowSet.updateLong(1, entity.getCodCorso());
-			rowSet.updateLong(2, entity.getCodCorsista());
-			rowSet.insertRow();
-			rowSet.moveToCurrentRow();
-			rowSet.acceptChanges();
+			int count = 0;
+			while(rowSet.next()) {
+				if(rowSet.getLong(1) == entity.getCodCorso()) {
+					count++;
+				}
+			}
+			if(count <= 12) {
+				rowSet.moveToInsertRow();
+				rowSet.updateLong(1, entity.getCodCorso());
+				rowSet.updateLong(2, entity.getCodCorsista());
+				rowSet.insertRow();
+				rowSet.moveToCurrentRow();
+				rowSet.acceptChanges();
+			}
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}		
