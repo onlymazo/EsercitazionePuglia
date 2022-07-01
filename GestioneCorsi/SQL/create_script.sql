@@ -49,3 +49,26 @@ password varchar2(2000) not null,
 constraint p_codadmin primary key (cod_admin)
 );
 
+--view di utility per report
+create or replace view corso_top as 
+select a.cod_corso, count(a.cod_corsista) as totmax
+from corso_corsista a
+group by a.cod_corso
+having count(a.cod_corsista)=
+(select max(mc.totale)
+from
+(select count(cc.cod_corsista) as totale
+from corso_corsista cc
+group by cc.cod_corso) mc);
+
+create or replace view docenti_1 as
+select count(c.cod_corso) as corsi_docente, c.cod_docente
+from corso c
+group by c.cod_docente
+having count(c.cod_corso)>1;
+
+create or replace view corsi_posti as
+select cc.cod_corso, count(cc.cod_corsista) as n_corsisti
+from corso_corsista cc
+having count(cc.cod_corsista) <= 12
+group by cc.cod_corso;

@@ -26,6 +26,15 @@ public interface DAOConstants {
 	String SELECT_DOCENTESEQ = "Select docente_seq from dual";
 	String SELECT_CORSOSEQ = "Select corso_seq.nextval from dual";
 	String SELECT_CORSISTASEQ = "Select corsista_seq.nextval from dual";
-
+	
+	//----REPORT
+	String SELECT_CORSISTI_TOTALI = "Select count(cod_corsista) from corsista";
+	String SELECT_CORSO_TOP = "Select corso.nome_corso from corso, corso_top where corso.cod_corso = corso_top.cod_corso";
+	String SELECT_INIZIO_ULTIMO_CORSO = "Select nome_corso, data_inizio from corso where data_inizio in (select max(data_inizio) from corso)";
+	String SELECT_DURATA_MEDIA ="Select avg(((data_fine - data_inizio)/7)*5) from corso";
+	String SELECT_NUMERO_COMMENTI = "Select count(commenti) from corso";
+	String SELECT_ELENCO_CORSISTI = "Select cod_corsista, nome_corsista, cognome_corsista from corsista";
+	String SELECT_DOCENTE_CORSI = "Select d.* from docenti_1, docente d where docenti_1.cod_docente = d.cod_docente";
+	String SELECT_CORSI_DISPONNIBILI = "Select c.* from corso c, corsi_posti cp where c.cod_corso = cp.cod_corso";
 	
 }
