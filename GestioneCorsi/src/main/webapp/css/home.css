@@ -79,7 +79,8 @@ p.copyright {
 	margin-top: 5%;
 }
 
-.card {
-	background-color: #e8e4d8;
-	opacity: 0.8;
+.errore-pan {
+	height: 270px;
+	overflow-y: auto;
+	overflow-x: hidden;
 }

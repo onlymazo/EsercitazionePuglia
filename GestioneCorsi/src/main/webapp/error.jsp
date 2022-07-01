@@ -13,7 +13,7 @@
 <body class="errore">
 	<jsp:include page="nav.jsp" />
 	<div class="container errore-cont">
-		<h3>Oh mio dio, un errore! AAAAAAAHHHHH!</h3>
+
 		<%
 		if (exception instanceof ClassNotFoundException) {
 		%>
@@ -21,19 +21,20 @@
 		<div class="row">
 			<div class="col">&nbsp;</div>
 			<div class="col">
-				<div class="card w-100 h-100">
-					<div class="card-title">
-						<h5>Eccezione durante la connessione al DB</h5>
-					</div>
-					<div class="card-body">
-						<h5 <%=exception.getClass().getName()%>></h5>
-						<p>
-							Motivo:&nbsp;<%=exception.getMessage()%></p>
-						<button onclick="window.history.back()" class="btn btn-dark">Indietro</button>
-					</div>
+					<h3>Oh mio dio, un errore! AAAAAAAHHHHH!</h3>
+				<div class="errore-pan">
+					<h5>Eccezione durante la connessione al DB</h5>
+
+
+					<h5 <%=exception.getClass().getName()%>></h5>
+					<p>
+						Motivo:&nbsp;<%=exception.getMessage()%></p>
+
 				</div>
+				<button onclick="window.history.back()" class="btn btn-dark">Indietro</button>
 			</div>
 		</div>
+
 
 		<%
 		} else if (exception instanceof DAOException) {
@@ -42,52 +43,51 @@
 		<div class="row">
 			<div class="col">&nbsp;</div>
 			<div class="col">
-				<div class="card w-100 h-100">
-					<div class="card-title">
-						<h5>Eccezione DAO</h5>
-					</div>
-					<div class="card-body">
-						<h5 <%=exception.getClass().getName()%>></h5>
-						<p>
-							Motivo:&nbsp;<%=exception.getMessage()%></p>
-						<button onclick="window.history.back()" class="btn btn-dark">Indietro</button>
-					</div>
-				</div>
+					<h3>Oh mio dio, un errore! AAAAAAAHHHHH!</h3>
+				<div class="errore-pan">
+				<h5>Eccezione DAO</h5>
+				<h5 <%=exception.getClass().getName()%>></h5>
+				<p>
+					Motivo:&nbsp;<%=exception.getMessage()%></p>
+
+			</div>
+			<button onclick="window.history.back()" class="btn btn-dark">Indietro</button>
 			</div>
 		</div>
 
 
-	<%
-	} else {
-	%>
+		<%
+		} else {
+		%>
 
-	<div class="row">
-		<div class="col">&nbsp;</div>
-		<div class="col">
-			<div class="card w-100 h-100">
-				<div class="card-title">
-					<h5>Eccezione non prevista</h5>
-				</div>
-				<div class="card-body">
-					<h5 <%=exception.getClass().getName()%>></h5>
-					<p>
-						Motivo:&nbsp;<%=exception.getMessage()%></p>
-					<p>
-						Stacktrace:&nbsp;<%
-					exception.printStackTrace(new PrintWriter(out));
-					%>
-					</p>
-					<button onclick="window.history.back()" class="btn btn-dark">Indietro</button>
-				</div>
+		<div class="row">
+			<div class="col">&nbsp;</div>
+			<div class="col">
+					<h3>Oh mio dio, un errore! AAAAAAAHHHHH!</h3>
+			<div class="errore-pan">
+
+				<h5>Eccezione non prevista</h5>
+
+				<h5 <%=exception.getClass().getName()%>></h5>
+				<p>
+					Motivo:&nbsp;<%=exception.getMessage()%></p>
+				<p>
+					Stacktrace:&nbsp;<%
+				exception.printStackTrace(new PrintWriter(out));
+				%>
+				</p>
+
+			</div>
+			<button onclick="window.history.back()" class="btn btn-dark">Indietro</button>
 			</div>
 		</div>
-	</div>
 
 
 
-	<%
-	}
-	%>
+
+		<%
+		}
+		%>
 	</div>
 	<footer class="footer"><%@ include file="footer.html"%></footer>
 </body>

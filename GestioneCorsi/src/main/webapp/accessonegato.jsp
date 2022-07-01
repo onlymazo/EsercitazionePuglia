@@ -29,7 +29,6 @@
 		</div>
 
 
-	</div>
 	<footer class="footer"><%@include file="footer.html"%></footer>
 </body>
 </html>
