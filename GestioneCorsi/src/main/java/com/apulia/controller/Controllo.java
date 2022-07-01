@@ -29,7 +29,7 @@ public class Controllo extends HttpServlet {
 				adminpass = lU.getAdminPass(Long.parseLong(request.getParameter("cod_admin")));
 				if (adminpass.equals(password)) {
 					session.setAttribute("cod_admin", cod_admin);
-					response.sendRedirect("admin.jsp");
+					response.sendRedirect("gestione.jsp");
 				} else {
 					response.sendRedirect("accessonegato.jsp");
 				}
