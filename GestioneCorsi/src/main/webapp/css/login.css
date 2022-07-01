@@ -1,11 +1,13 @@
 @charset "ISO-8859-1";
 
 body {
-	background-image: url("../img/5.png");
-	color: #f1d4b6;
+	background-image: url("../img/7.png");
+	color: #e8e4d8;
 	text-align: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
 }
-
 
 .input-group-prepend span {
 	width: 50px;
@@ -23,6 +25,11 @@ a {
 	cursor: crosshair;
 }
 
+a:hover {
+	color: #278e7b;
+	cursor: crosshair;
+}
+
 .titolo {
 	font-family: 'Montez', cursive;
 	text-align: center;
@@ -37,7 +44,8 @@ a {
 
 .card {
 	height: 380px;
-	margin-top: 10%; width : 400px;
+	margin-top: 10%;
+	width: 400px;
 	background-color: rgba(0, 0, 0, 0.5) !important;
 	width: 400px;
 }

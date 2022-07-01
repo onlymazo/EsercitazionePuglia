@@ -5,6 +5,8 @@
 <head>
 <%@include file="inclusioni.html"%>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/login.css"> 
+
 <title>Fattapposta - Area Admin</title>
 </head>
 <body>

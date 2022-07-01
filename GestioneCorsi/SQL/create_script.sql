@@ -35,6 +35,13 @@ constraint f_codcorso foreign key (cod_corso) references corso(cod_corso) on del
 constraint f_codcorsista foreign key (cod_corsista) references corsista(cod_corsista) on delete cascade
 );
 
+create table sfondo (
+id_img int,
+url_img int,
+constraint p_idimg primary key (id_img)
+);
+
+
 ----sequenze per corso, corsista, docente
 create sequence corso_seq;
 create sequence corsista_seq;
