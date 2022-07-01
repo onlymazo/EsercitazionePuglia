@@ -22,6 +22,11 @@
         	<span class="glyphicon glyphicon-log-in"></span>Login
         	</a>
         </li>
+        
+                <li><a href="logout.jsp">
+        	<span class="glyphicon glyphicon-off"></span>Logout
+        	</a>
+        </li>
       </ul>
      
      </div>
