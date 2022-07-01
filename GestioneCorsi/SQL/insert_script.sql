@@ -21,4 +21,5 @@ insert into corso_corsista values((select cod_corso from corso where nome_corso 
 insert into corso_corsista values((select cod_corso from corso where nome_corso = 'Legge'), (select cod_corsista from corsista where cognome_corsista = 'Canovacciuolo'));
 insert into corso_corsista values((select cod_corso from corso where nome_corso = 'Legge'), (select cod_corsista from corsista where cognome_corsista = 'Errori'));
 
+
 commit

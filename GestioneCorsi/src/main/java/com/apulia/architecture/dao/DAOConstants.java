@@ -23,9 +23,6 @@ public interface DAOConstants {
 	String SELECT_DOCENTESEQ = "Select docente_seq from dual";
 	String SELECT_CORSOSEQ = "Select corso_seq.nextval from dual";
 	String SELECT_CORSISTASEQ = "Select corsista_seq.nextval from dual";
-	
-	//-----CONTROLLER
-	String SELECT_SFONDO = "select * from (SELECT * from sfondi order by dbms_random.value) where rownum = 1";
-	
+
 	
 }
