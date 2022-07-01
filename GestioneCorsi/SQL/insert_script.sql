@@ -22,6 +22,6 @@ insert into corso_corsista values((select cod_corso from corso where nome_corso 
 insert into corso_corsista values((select cod_corso from corso where nome_corso = 'Legge'), (select cod_corsista from corsista where cognome_corsista = 'Errori'));
 
 insert into admin values(123, 'Betacom', 'Apulia',
-'aeG$hU%Ak?m@T&80*d2V#Wd5G$hU%Ak?m@T&80*d2V#W46G$hU%Ak?m@T&80*d2V#Wa5G$hU%Ak?m@T&80*d2V#W8bG$hU%Ak?m@T&80*d2V#W4dG$hU%Ak?m@T&80*d2V#WdcG$hU%Ak?m@T&80*d2V#W28G$hU%Ak?m@T&80*d2V#WfbG$hU%Ak?m@T&80*d2V#WffG$hU%Ak?m@T&80*d2V#W34G$hU%Ak?m@T&80*d2V#Wa7G$hU%Ak?m@T&80*d2V#W98G$hU%Ak?m@T&80*d2V#Wd3G$hU%Ak?m@T&80*d2V#Wc4G$hU%Ak?m@T&80*d2V#W29G$hU%Ak?m@T&80*d2V#W')
+'aeG$hU%Ak?m@T&80*d2V#Wd5G$hU%Ak?m@T&80*d2V#W46G$hU%Ak?m@T&80*d2V#Wa5G$hU%Ak?m@T&80*d2V#W8bG$hU%Ak?m@T&80*d2V#W4dG$hU%Ak?m@T&80*d2V#WdcG$hU%Ak?m@T&80*d2V#W28G$hU%Ak?m@T&80*d2V#WfbG$hU%Ak?m@T&80*d2V#WffG$hU%Ak?m@T&80*d2V#W34G$hU%Ak?m@T&80*d2V#Wa7G$hU%Ak?m@T&80*d2V#W98G$hU%Ak?m@T&80*d2V#Wd3G$hU%Ak?m@T&80*d2V#Wc4G$hU%Ak?m@T&80*d2V#W29G$hU%Ak?m@T&80*d2V#W');
 
 commit

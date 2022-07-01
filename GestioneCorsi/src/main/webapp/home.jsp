@@ -20,14 +20,14 @@
 					<h5 class="reserved">AREA RISERVATA</h5>
 
 					<div class="card-body">
-						<form action="#" method="post">
+						<form action="/<%=application.getServletContextName()%>/controllo" method="post">
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-dark"><i
 										class="fas fa-user"></i></span>
 								</div>
-								<input type="text" name="username" class="form-control"
-									placeholder="username" autofocus>
+								<input type="text" name="cod_admin" class="form-control"
+									placeholder="codice admin" autofocus>
 
 							</div>
 							<div class="input-group form-group">

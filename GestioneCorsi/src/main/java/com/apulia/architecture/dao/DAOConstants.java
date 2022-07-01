@@ -19,6 +19,9 @@ public interface DAOConstants {
 	String SELECT_CORSISTA_BYCOD = "Select * from corsista where cod_corsista = ?";
 	String SELECT_DOCENTE_BYCOD = "Select * from docente where cod_docente = ?";
 	
+	String SELECT_ADMINPASS = "Select password from admin where cod_admin=?";
+
+	
 	//-----SEQUENZE
 	String SELECT_DOCENTESEQ = "Select docente_seq from dual";
 	String SELECT_CORSOSEQ = "Select corso_seq.nextval from dual";
