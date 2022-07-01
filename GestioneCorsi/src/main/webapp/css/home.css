@@ -1,0 +1,85 @@
+html {
+	position: relative;
+	min-height: 100%
+}
+
+body {
+	margin-bottom: 320px;
+	background-color: #e8e4d8;	
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.navbar-inverse {
+	background-color:#5bb7a8;	
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	height: 300px;
+	width: 100%;
+	background-color: #5bb7a8;
+	color: #f1d4b6;
+}
+
+@media screen and (max-width: 740px) {
+	footer {
+		height: 480px;
+	}
+	
+	body {
+	margin-bottom: 500px;
+	}
+}
+
+footer nav {
+	float: left;
+	padding: 30px;
+}
+
+footer section {
+	float: left;
+	padding: 30px;
+}
+
+p.copyright {
+	clear: both;
+	margin-left: 30px;
+	margin-bottom:30px;
+	
+}
+
+
+/* ACCESSO NEGATO */
+
+.accneg {
+	background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../img/1.png");
+}
+
+.accesso-negato {
+	margin-top: 5%;
+}
+
+/*ERRORE*/
+
+.errore {
+		background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../img/2.png");
+	
+}
+
+.errore404 {
+		background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../img/3.png");
+	
+}
+
+.errore-cont {
+	margin-top: 5%;
+}
+
+.card {
+	background-color: #e8e4d8;
+	opacity: 0.8;
+}

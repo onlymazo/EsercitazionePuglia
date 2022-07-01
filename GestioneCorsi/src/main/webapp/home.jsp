@@ -40,8 +40,8 @@
 
 							</div>
 							<div class="form-group">
-								<button class="btn float-left btn-dark" href="#">Torna
-									all'area utente</button>
+								<a class="btn float-left btn-dark" href="#">Torna
+									all'area utente</a>
 							</div>
 
 							<div class="form-group">
