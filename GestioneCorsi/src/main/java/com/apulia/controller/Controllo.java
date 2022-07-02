@@ -2,6 +2,7 @@ package com.apulia.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ public class Controllo extends HttpServlet {
 			throws ServletException, IOException {
 		String cod_admin = request.getParameter("cod_admin");
 		String password = AlgoritmoMD5.convertiMD5(request.getParameter("password"));
-
+		
 		HttpSession session = request.getSession();
 		String adminpass = null;
 		if (cod_admin != null && password != null) {
@@ -31,7 +32,9 @@ public class Controllo extends HttpServlet {
 					session.setAttribute("cod_admin", cod_admin);
 					response.sendRedirect("gestione.jsp");
 				} else {
-					response.sendRedirect("accessonegato.jsp");
+					request.setAttribute("errorMessage", "Erooore");
+					RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+					rd.forward(request, response);
 				}
 			} catch (Exception exc) {
 				exc.printStackTrace();

@@ -21,6 +21,12 @@
 
 					<div class="card-body">
 						<form action="/<%=application.getServletContextName()%>/controllo" method="post">
+							<%
+								if (null!=request.getAttribute("errorMessage")) {
+									out.println(request.getAttribute("errorMessage"));
+								}
+							%>
+							
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-dark"><i
