@@ -1,3 +1,8 @@
+<%@page import="java.util.Vector"%>
+<%@page import="com.apulia.businesscomponent.utilities.IscrittiUtility"%>
+<%@page import="com.apulia.businesscomponent.facade.AdminFacade"%>
+<%@page import="com.apulia.businesscomponent.model.Corsista"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     	<%
@@ -21,7 +26,38 @@
 <button type="button" class="btn btn-outline-secondary">Elimina corsi</button>
 </div>
 
+	<header class="titolo-pagina">
+			<h3>Elenco corsisti</h3>
+		</header>
+		
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead class="table-dark">
+					<tr>
+						<th>Corso</th>
+						<th>Nome</th>
+						<th>Cognome</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+					IscrittiUtility  iU = new IscrittiUtility();
 
+					Vector<String[]> vect = iU.getIscritti();
+		            String[] dati = new String[vect.size()];
+		            for (int i = 0; i < vect.size(); i++) {
+		                dati = vect.get(i); { %>
+		                	<tr>
+		        			<td><%= dati[2] %></td>
+		        			<td><%= dati[0] %></td>
+		        			<td><%= dati[1] %></td>
+		        		</tr>
+		                <% }
+		            }
+					%>
+				</tbody>
+			</table>
+		</div>
 
 </div>
 

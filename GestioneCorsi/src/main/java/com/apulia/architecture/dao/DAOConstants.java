@@ -36,6 +36,7 @@ public interface DAOConstants {
 	String SELECT_NUMERO_COMMENTI = "Select count(commenti) from corso";
 	String SELECT_ELENCO_CORSISTI = "Select cod_corsista, nome_corsista, cognome_corsista from corsista";
 	String SELECT_DOCENTE_CORSI = "Select d.* from docenti_1, docente d where docenti_1.cod_docente = d.cod_docente";
-	String SELECT_CORSI_DISPONNIBILI = "Select c.* from corso c, corsi_posti cp where c.cod_corso = cp.cod_corso";
+	String SELECT_CORSI_DISPONIBILI = "Select c.* from corso c, corsi_posti cp where c.cod_corso = cp.cod_corso";
+	String SELECT_CORSISTI_ATTUALI = "Select * from corsisti_iscritti";
 	
 }
