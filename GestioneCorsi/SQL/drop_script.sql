@@ -7,3 +7,7 @@ drop table admin cascade constraints;
 drop sequence corso_seq;
 drop sequence corsista_seq;
 drop sequence docente_seq;
+
+drop view tot_corsisti;
+drop view rep_docenti;
+drop view posti_disponibili;

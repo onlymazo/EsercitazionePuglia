@@ -50,7 +50,7 @@ constraint p_codadmin primary key (cod_admin)
 );
 
 --view di utility per report
-create or replace view corso_top as 
+create or replace view tot_corsisti as 
 select a.cod_corso, count(a.cod_corsista) as totmax
 from corso_corsista a
 group by a.cod_corso
@@ -61,13 +61,13 @@ from
 from corso_corsista cc
 group by cc.cod_corso) mc);
 
-create or replace view docenti_1 as
+create or replace view rep_docenti as
 select count(c.cod_corso) as corsi_docente, c.cod_docente
 from corso c
 group by c.cod_docente
 having count(c.cod_corso)>1;
 
-create or replace view corsi_posti as
+create or replace view posti_disponibili as
 select cc.cod_corso, count(cc.cod_corsista) as n_corsisti
 from corso_corsista cc
 having count(cc.cod_corsista) <= 12
