@@ -27,7 +27,7 @@
 										class="fas fa-user"></i></span>
 								</div>
 								<input type="text" name="cod_admin" class="form-control"
-									placeholder="codice admin" autofocus>
+									placeholder="Codice admin" autofocus>
 
 							</div>
 							<div class="input-group form-group">
@@ -35,7 +35,7 @@
 									<span class="input-group-text bg-dark"><i
 										class="fas fa-key"></i></span>
 								</div>
-								<input type="password" name="password" placeholder="password"
+								<input type="password" name="password" placeholder="Password"
 									class="form-control">
 
 							</div>
