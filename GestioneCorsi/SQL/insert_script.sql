@@ -6,6 +6,9 @@ insert into corsista values(corsista_seq.nextval, 'Antonio', 'Canovacciuolo', 1)
 insert into corsista values(corsista_seq.nextval, 'Salvo', 'Errori', 0);
 insert into corsista values(corsista_seq.nextval, 'Maria', 'Di Mario', 0);
 insert into corsista values(corsista_seq.nextval, 'Chiara', 'Neri', 1);
+insert into corsista values(corsista_seq.nextval, 'Alberto', 'Lupo', 0);
+insert into corsista values(corsista_seq.nextval, 'Clark', 'Batman', 1);
+
 
 insert into corso values(corso_seq.nextval, (select cod_docente from docente where cognome_docente = 'Rotolo'), 'Arte', to_date('10/05/22', 'dd/mm/yy'), to_date('22/07/22', 'dd/mm/yy'), 540, 'Corso su Botticelli', 23);
 insert into corso values(corso_seq.nextval, (select cod_docente from docente where cognome_docente = 'Rotolo'), 'Storia', to_date('03/09/22', 'dd/mm/yy'), to_date('15/12/22', 'dd/mm/yy'), 360, 'Corso su Storia moderna', 13);

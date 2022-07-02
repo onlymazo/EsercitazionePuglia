@@ -50,7 +50,13 @@ constraint p_codadmin primary key (cod_admin)
 );
 
 --view di utility per report
-create or replace view tot_corsisti as 
+create or replace view corsisti_iscritti as
+select distinct nome_corsista
+from corsista
+left join corso_corsista
+on (corsista.cod_corsista = corso_corsista.cod_corsista);
+
+create or replace view corso_maxfreq as 
 select a.cod_corso, count(a.cod_corsista) as totmax
 from corso_corsista a
 group by a.cod_corso

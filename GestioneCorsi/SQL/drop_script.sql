@@ -8,6 +8,7 @@ drop sequence corso_seq;
 drop sequence corsista_seq;
 drop sequence docente_seq;
 
-drop view tot_corsisti;
+drop view corsisti_iscritti;
+drop view corso_maxfreq;
 drop view rep_docenti;
 drop view posti_disponibili;
